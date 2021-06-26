@@ -1,0 +1,207 @@
+%&latex
+\documentclass[11pt,a4paper]{scrartcl}
+
+\usepackage[english]{babel}
+\usepackage{standalone}
+\usepackage{layouts}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ margin=20mm
+ }
+%\usepackage{showframe}
+
+%--Fonts---%
+\newcommand\hmmax{0} %Avoid too many alphabets error
+\newcommand\bmmax{0}
+\renewcommand{\rmdefault}{ppl} % rm
+\linespread{1.05}        % Palatino needs more leading
+\usepackage[scaled]{helvet} % ss
+\usepackage{courier} % tt
+\usepackage{mathpazo} 
+\usepackage{microtype}
+
+%---Encoding---%
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{csquotes}
+\usepackage[ddmmyyyy,hhmmss]{datetime} %Compilation date
+
+%---Math---%
+\usepackage{amsmath,amsthm,amstext,amsbsy,amsfonts,amssymb,stackengine}
+\usepackage{mathrsfs}
+\usepackage{cancel}
+\usepackage{bm}
+\usepackage{mathtools}
+\usepackage{mathdots}
+\usepackage{thmtools}
+\usepackage{array}
+\usepackage{yhmath}
+\usepackage{gensymb}
+\usepackage{blkarray}
+\usepackage{xfrac}
+
+%---Plots---%
+\usepackage{epstopdf}
+\usepackage{gnuplottex}
+\usepackage{calc}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{transparent}
+
+%---Physics---%
+\usepackage{physics}
+\usepackage{siunitx}
+\sisetup{
+separate-uncertainty = true
+}
+
+%---Tables---%
+\usepackage{booktabs}
+\usepackage{multirow}
+
+\setlength{\aboverulesep}{0pt} %removes annoying spaces in booktabs tables
+\setlength{\belowrulesep}{0pt}
+\setlength{\extrarowheight}{.75ex}
+\setlength\parindent{0pt} 
+
+%---Graphics & Plots---%
+\usepackage{color}
+\usepackage[usenames, dvipsnames, table]{xcolor} %colori
+\usepackage{wrapfig}
+\usepackage[font=footnotesize, labelfont=bf,
+            labelformat=parens,
+            labelsep=endash, justification=raggedright,
+            singlelinecheck=on]{caption} %fancy captions
+\usepackage{subcaption} 
+\usepackage{pgf,tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{tikzmark}
+\usetikzlibrary{patterns}
+\usepackage{soul}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{fancybox}
+\usepackage{framed}
+
+%---Indeces, links, bibliography---%
+\usepackage{imakeidx} %Indice analitico
+\usepackage[stable]{footmisc}
+
+%\usepackage{xr-hyper}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}  %hyperref va caricato sempre dopo footmisc, altrimenti le footnotes si buggano e riportano tutte alla prima pagina
+%\usepackage[inline]{showlabels} %Draft
+
+\usepackage[symbol=$\wedge$,numberlinked=false]{footnotebackref}
+\makeindex[columns=2, title=Analytical index, options= -s indexstyle.ist]
+
+\usepackage[backend=biber,sorting=none]{biblatex}
+\renewbibmacro{in:}{}
+\addbibresource{bibliography.bib}
+
+%---Utilities---%
+\usepackage{comment}
+\usepackage{xspace}
+\usepackage{marginnote}
+\usepackage{ragged2e}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\usepackage{xargs}                      % Use more than one optional parameter in a new commands
+\usepackage{lipsum}  
+\usepackage{float}
+
+\usepackage{lipsum}  
+\usepackage{float}
+\usepackage{listings}
+\usepackage[most]{tcolorbox}
+
+\newcommand{\opx}[1]{\hat{\mathrm{#1}}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+
+%%%%%%%%%% CODE LISTING %%%%%%%%%%%
+%New colors 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+%Code listing style named "mystyle"
+\lstdefinestyle{mystyle}{
+  language=[90]Fortran,
+  backgroundcolor=\color{backcolour},   commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2
+}
+%"mystyle" code listing set
+\lstset{style=mystyle}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} %Clear the previous header/footer
+
+\lhead{Francesco Manzali}
+\rhead{\today}
+\lfoot{Neural Networks and Deep Learning A.A. 2020/21}
+\rfoot{Assignment \exerciseNumber, page \thepage}
+
+\newcommand{\exerciseNumber}{1}
+\newcommand{\q}[1]{``#1''} 
+\setlength{\parskip}{0cm}
+
+\graphicspath{{Plots/}}
+\begin{document}
+
+%+Title
+\title{Unsupervised Deep Learning}
+\subtitle{Assignment \exerciseNumber}
+\author{\large Francesco Manzali}
+\date{\large \today}
+\maketitle
+\thispagestyle{fancy}
+%-Title
+
+%+Abstract
+\begin{abstract}
+  ABSTRACT
+\end{abstract}
+%-Abstract
+
+
+%Total length <= 6 pages, additional tables/figures can be added in a final appendix (optional)
+
+\section*{Introduction}
+
+
+%Homework goals and the main implementation strategies chosen
+
+\section{Convolutional Autoencoder}
+
+\subsection{Methods}
+
+
+%Model architectures and hyperparameters
+
+\subsection{Results}
+
+
+%Simulation results
+
+
+
+
+%\the\textwidth
+%\printbibliography
+
+\end{document}

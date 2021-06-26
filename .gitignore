@@ -1,0 +1,17 @@
+*.blg
+*.bcf
+*.bbl
+*.ddf
+__pycache__/
+*.idx
+*.ilg
+*.ind
+*.log
+*.bb
+*.aux
+*.run.xml
+*.Rmd
+*.fdb_latexmk
+*.fls
+*.out
+*.synctex.gz
